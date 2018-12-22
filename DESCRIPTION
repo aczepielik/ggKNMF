@@ -1,0 +1,14 @@
+Package: ggKNMF
+Type: Package
+Title: GGplot Extnension For KMNF Members
+Version: 0.0.0.9000
+Author: Adam Czepielik <adam.czepielik@gmail.com>
+Maintainer: Adam Czepielik <adam.czepielik@gmail.com>
+Description: This package provides some tools that members of Financial
+    Mathematics Student Association of the Jagiellonian University (Polish acronym: KMNF) may find usefull.
+    The package consists of three parts: theme, color scheme and some new geoms.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Depends: R (>= 3.1.0), ggplot2(>= 2.2.0)
+RoxygenNote: 6.1.1
