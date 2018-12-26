@@ -33,7 +33,9 @@ This scale maps values of continuous variables onto monochromatic color scale.
 Red and blue colours are supported with default red
 }
 \examples{
+\dontrun{
 ggplot(mtcars, aes(hp, mpg, colour = drat)) + geom_point() + scale_colour_continuous_knmf()
 ggplot(mtcars, aes(hp, mpg, colour = drat)) + geom_point() +
 scale_colour_continuous_knmf(colour = "blue")
+}
 }

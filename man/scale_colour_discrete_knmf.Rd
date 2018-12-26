@@ -38,11 +38,15 @@ This scale maps values of categorical variables onto colours from \link{knmf_col
 All eight colours should be well distinguishable and first six are colour-blind safe.
 }
 \examples{
+\dontrun{
 ggplot(mtcars, aes(hp, mpg, colour = as.factor(cyl))) + geom_point() +
 scale_colour_discrete_knmf()
+}
+\dontrun{
 ggplot(mtcars, aes(x = as.factor(carb), y = ..count.., fill = as.factor(carb))) +
 geom_bar() + scale_fill_discrete_knmf()
 
 ggplot(mtcars, aes(hp, fill = as.factor(gear))) +
 geom_density(alpha = 0.8) + scale_fill_discrete_knmf()
+}
 }

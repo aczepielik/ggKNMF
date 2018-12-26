@@ -30,8 +30,10 @@ knmf_palette <- function(start = 1, reverse = FALSE){
 
 #' @rdname scale_colour_discrete_knmf
 #' @examples
+#' \dontrun{
 #' ggplot(mtcars, aes(hp, mpg, colour = as.factor(cyl))) + geom_point() +
 #' scale_colour_discrete_knmf()
+#' }
 #' @export
 
 scale_colour_discrete_knmf <- function(..., start = 1, reverse = FALSE,
@@ -45,11 +47,13 @@ scale_color_discrete_knmf <- scale_colour_discrete_knmf
 
 #' @rdname scale_colour_discrete_knmf
 #' @examples
+#' \dontrun{
 #' ggplot(mtcars, aes(x = as.factor(carb), y = ..count.., fill = as.factor(carb))) +
 #' geom_bar() + scale_fill_discrete_knmf()
 #'
 #' ggplot(mtcars, aes(hp, fill = as.factor(gear))) +
 #' geom_density(alpha = 0.8) + scale_fill_discrete_knmf()
+#' }
 #' @export
 
 scale_fill_discrete_knmf <- function(..., start = 1, reverse = FALSE,

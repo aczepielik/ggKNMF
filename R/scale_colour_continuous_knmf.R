@@ -31,9 +31,11 @@ monochrome_palette <- function(colour = "red", reverse = FALSE, ...){
 
 #' @rdname scale_colour_continuous_knmf
 #' @examples
+#' \dontrun{
 #' ggplot(mtcars, aes(hp, mpg, colour = drat)) + geom_point() + scale_colour_continuous_knmf()
 #' ggplot(mtcars, aes(hp, mpg, colour = drat)) + geom_point() +
 #' scale_colour_continuous_knmf(colour = "blue")
+#' }
 #' @export
 #'
 scale_colour_continuous_knmf <- function(..., colour = "red", reverse = FALSE){
