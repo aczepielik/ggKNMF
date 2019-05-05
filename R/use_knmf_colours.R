@@ -24,8 +24,8 @@ use_knmf_colours <- function(scales = TRUE, geom_defaults = TRUE){
   assign("scale_fill_discrete", scale_fill_discrete_knmf, pos = ggKNMF_colour_scales)
   assign("scale_colour_continuous", scale_colour_continuous_knmf, pos = ggKNMF_colour_scales)
   assign("scale_fill_continuous", scale_fill_continuous_knmf, pos = ggKNMF_colour_scales)
-  assign("scale_colour_ordinal", scale_colour_sequential, pos = ggKNMF_colour_scales)
-  assign("scale_fill_ordinal", scale_fill_sequential, pos = ggKNMF_colour_scales)
+  assign("scale_colour_ordinal", scale_colour_ordinal_knmf, pos = ggKNMF_colour_scales)
+  assign("scale_fill_ordinal", scale_fill_ordinal_knmf, pos = ggKNMF_colour_scales)
   }
 
   if (scales) {
