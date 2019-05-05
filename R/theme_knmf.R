@@ -23,7 +23,7 @@
 #' labs(title = "Density plot", subtitle = "Two facets") + ggKNMF::theme_knmf()
 #' }
 #'
-theme_knmf <- function(base_size = 11, base_family = "Roboto Condensed",
+theme_knmf <- function(base_size = 11, base_family = "sans",
                        base_line_size = base_size/22,
                        base_rect_size = base_size/22){
   theme_grey(base_size = base_size, base_family = base_family,
