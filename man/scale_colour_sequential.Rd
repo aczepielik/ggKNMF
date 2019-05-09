@@ -4,11 +4,7 @@
 \alias{scale_colour_sequential}
 \alias{scale_color_sequential}
 \alias{scale_fill_sequential}
-\title{Sequential colour scales
-
-This scale maps ordinal or continuous values onto scale varying from very light grey to sepcified colour
-(or other way round if reverse = TRUE).
-All colours from basic palette are supported with default red.}
+\title{Sequential colour scales}
 \usage{
 scale_colour_sequential(..., colour = "red", reverse = FALSE,
   second.colour = "grey90")
@@ -26,10 +22,10 @@ scale_fill_sequential(..., colour = "red", reverse = FALSE,
 
 \item{reverse}{logical. FALSE (default) if selected colour should
 represent low values and light grey high values, TRUE otherwise.}
+
+\item{second.colour}{second boundary of scale. Name of one of \link{knmf_colours} or corresponding integer}
 }
 \description{
-Sequential colour scales
-
 This scale maps ordinal or continuous values onto scale varying from very light grey to sepcified colour
 (or other way round if reverse = TRUE).
 All colours from basic palette are supported with default red.

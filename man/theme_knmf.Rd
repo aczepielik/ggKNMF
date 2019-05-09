@@ -4,14 +4,13 @@
 \alias{theme_knmf}
 \title{KNMF ggplot theme}
 \usage{
-theme_knmf(base_size = 11, base_family = "Roboto Condensed",
+theme_knmf(base_size = 11, base_family = "sans",
   base_line_size = base_size/22, base_rect_size = base_size/22)
 }
 \arguments{
 \item{base_size}{base font size. Particular text elements are scaled relatively to this.}
 
-\item{base_family}{base font family. Default is "Roboto Condensed".
-If you don't have it installed consider using "sans" value for stable and nice performance.}
+\item{base_family}{base font family.}
 
 \item{base_line_size}{base size for line elements. Particular line elements are scaled relatively to this.}
 
@@ -28,10 +27,8 @@ default when package ggKNMF is loaded.
 By default uses Roboto Condensed fonts which must be installed by the user.
 }
 \examples{
-\dontrun{
 ggplot(mtcars, aes(hp, fill = as.factor(gear))) + geom_density() +
 facet_wrap(~as.factor(am)) +
 labs(title = "Density plot", subtitle = "Two facets") + ggKNMF::theme_knmf()
-}
 
 }

@@ -8,7 +8,7 @@
 \title{Continuous, monochromatic colour scales
 
 This scale maps values of continuous variables onto monochromatic color scale.
-Red and blue colours are supported with default red}
+Currently only red and blue colours are supported with default red}
 \usage{
 monochrome_palette(colour = "red", reverse = FALSE, ...)
 
@@ -30,7 +30,7 @@ TRUE otherwise}
 Continuous, monochromatic colour scales
 
 This scale maps values of continuous variables onto monochromatic color scale.
-Red and blue colours are supported with default red
+Currently only red and blue colours are supported with default red
 }
 \examples{
 \dontrun{

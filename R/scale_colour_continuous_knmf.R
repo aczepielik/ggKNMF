@@ -5,7 +5,7 @@
 #' @title Continuous, monochromatic colour scales
 #'
 #' This scale maps values of continuous variables onto monochromatic color scale.
-#' Red and blue colours are supported with default red
+#' Currently only red and blue colours are supported with default red
 #'
 #' @param ... Arguments passed on to \link[ggplot2]{discrete_scale}
 #' @param colour either "red" or "blue". Choose color for the scale
@@ -19,10 +19,10 @@ monochrome_palette <- function(colour = "red", reverse = FALSE, ...){
   if (colour != "red" & colour != "blue") {
     stop("Only red and blue palettes are supported. Specify 'colour' argument as one of {'red', 'blue'}")
   } else  if (colour == "red") {
-    boundaries <- c("#350000", "#ff1515")
+    boundaries <- knmf_colours[c("black", "red", "yellow")]
     if (reverse) boundaries <- rev(boundaries)
   } else {
-    boundaries <- c("#002424", "#00cbcb")
+    boundaries <- c("grey30", knmf_colors["blue"], "#ffd272")
     if (reverse) boundaries <- rev(boundaries)
   }
 

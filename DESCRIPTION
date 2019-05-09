@@ -1,6 +1,6 @@
 Package: ggKNMF
 Type: Package
-Title: GGplot Extnension For KMNF Members
+Title: GGplot Extnension for KNMF
 Version: 0.0.0.9000
 Author: Adam Czepielik <adam.czepielik@gmail.com>
 Maintainer: Adam Czepielik <adam.czepielik@gmail.com>
@@ -12,3 +12,7 @@ Encoding: UTF-8
 LazyData: true
 Depends: R (>= 3.1.0), ggplot2(>= 2.2.0)
 RoxygenNote: 6.1.1
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

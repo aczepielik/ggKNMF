@@ -1,8 +1,4 @@
-#' @name scale_colour_sequential
-#' @aliases scale_color_sequential
-#' @aliases scale_fill_sequential
-#'
-#' @title Sequential colour scales
+#' Sequential colour scales
 #'
 #' This scale maps ordinal or continuous values onto scale varying from very light grey to sepcified colour
 #' (or other way round if reverse = TRUE).
@@ -10,6 +6,7 @@
 #'
 #' @param ... Arguments passed on to \link[ggplot2]{continuous_scale}
 #' @param colour first boundary of scale. Name of one of \link{knmf_colours} or corresponding integer
+#' @param second.colour second boundary of scale. Name of one of \link{knmf_colours} or corresponding integer
 #' @param reverse logical. FALSE (default) if selected colour should
 #' represent low values and light grey high values, TRUE otherwise.
 #'
