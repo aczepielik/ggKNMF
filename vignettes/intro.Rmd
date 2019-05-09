@@ -1,0 +1,123 @@
+---
+title: "Intro to ggKNMF"
+output: 
+  rmarkdown::html_vignette:
+    fig_width: 5
+    fig_height: 3
+
+vignette: >
+  %\VignetteIndexEntry{Intro to ggKNMF}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+Package `ggKNMF` is a `ggplot2` extension offering new style designed to be of consistent with the Financial
+Mathematics Student Association of the Jagiellonian University visual identification. In this introduction we will see how it works and how to use it.
+
+`ggKNMF` overwrites some of default ggplot style right when loaded. Let us plot some example charts with vasic ggplot and see how the will look like after loading `ggKNMF`.
+
+```{r}
+library(ggplot2)
+
+scatter_plot_facets <- ggplot(iris, aes(Petal.Length, Petal.Width)) + 
+  geom_point() +
+  geom_smooth(method = 'lm') +
+  facet_wrap(~Species) +
+  labs(title = "Scatter plot", subtitle = "with facets")
+
+scatter_plot_many_lines <- ggplot(iris, aes(Petal.Length, Petal.Width, colour = Species)) + 
+  geom_point() +
+  geom_smooth(method = 'lm') +
+  labs(title = "Scatter plot", subtitle = "with line for each category")
+
+density_plot <- ggplot(iris, aes(Petal.Length, fill = Species)) +
+  geom_density() +
+  labs(title = "Density plot", subtitle = "coloured by category")
+```
+
+```{r}
+scatter_plot_facets
+scatter_plot_many_lines
+density_plot
+```
+
+Now, let us load `ggKNMF` and see those plots restyled 
+
+```{r}
+library(ggKNMF)
+scatter_plot_facets
+scatter_plot_many_lines
+density_plot
+```
+
+Several things has changed. We will discuss it one by one, showing how to restore default behaviour in each aspect and how to use specyfic features in a standalone manner (without being loaded as default)
+
+## theme_knmf()
+
+Themes in ggplots describe look and behaviour of axes, grids, legend, facets and all labels associated with them. Function theme_knmf() set with package loading as a default theme uses thin, solid axis lines, dashed major grid lines, no minor grid lines, white background, and modified string display style.
+
+When `ggKNMF` is loaded `theme_knmf` is loaded previous theme is attached to variable `old_theme`. To set it back as default one can use
+
+
+Function `theme_knmf` can be used explicitely to add this theme to plot
+```{r, eval=FALSE}
+# when package ggKNMF is loaded
+ggplot(iris, aes(Petal.Length, Petal.Width)) + 
+  geom_point() +
+  theme_knmf()
+
+#when package ggKNMF is not loaded
+ggplot(iris, aes(Petal.Length, Petal.Width)) + 
+  geom_point() +
+  ggKNMF::theme_knmf()
+```
+
+## Colour scheme
+Package `ggKNMF` comes with eight-colour palette which is used to construct colour scales. Their RGB definitions can be seen by prompting `knmf_colours`. Visualization is also available through:
+
+```{r}
+#chnage it
+knmf_colours
+```
+
+When an discrete-valued aesthetic is mapped onto colour or fill, colours from this palette will be displayed. When continuous (or ordered factor) aesthetic is mappend onto colour and fill one of two oredered, multicolour scales is used: "red" varying from black through red to yellow or "blue" varying from dark grey, through light blue to light yellow:
+
+```{r, echo=FALSE}
+Polychrome::swatch(ggKNMF:::monochrome_palette("red")(5))
+Polychrome::swatch(ggKNMF:::monochrome_palette("red")(15))
+
+Polychrome::swatch(ggKNMF:::monochrome_palette("blue")(5))
+Polychrome::swatch(ggKNMF:::monochrome_palette("blue")(15))
+```
+
+Default conitnuous (or ordinal) scale is "red". To change it to "blue" explict usage of `scale_colour_continuous_knmf` is necessary.
+
+There are two more scales for colour or fill aesthetics in the package. With `scale_colour_sequential` one can map continuos values to colours varying from colour selected among `knmf_colours` to light grey. With `scale_colour_divergent` colours vary from specified midpoint in to directions up to two specified colours.
+
+Let us restore package colour scheme with `use_knmf_colours()` function nad see colour and fill scales in action
+
+```{r}
+use_knmf_colours()
+theme_set(theme_knmf())
+```
+
+
+```{r}
+ggplot(faithfuld, aes(eruptions, waiting, fill = density)) + 
+  geom_tile() +
+  labs(title = "Red fill scale (default)")
+
+ggplot(faithfuld, aes(eruptions, waiting, fill = density)) + 
+  geom_tile() + scale_fill_continuous_knmf(colour = "blue") +
+  labs(title = "Blue fill scale scale")
+```
+
+
+
