@@ -26,11 +26,10 @@ Mathematics Student Association of the Jagiellonian University visual identifica
 ```{r}
 library(ggplot2)
 
-scatter_plot_facets <- ggplot(iris, aes(Petal.Length, Petal.Width)) + 
+scatter_plot <- ggplot(iris, aes(Petal.Length, Petal.Width)) + 
   geom_point() +
   geom_smooth(method = 'lm') +
-  facet_wrap(~Species) +
-  labs(title = "Scatter plot", subtitle = "with facets")
+  labs(title = "Scatter plot", subtitle = "with one regression line")
 
 scatter_plot_many_lines <- ggplot(iris, aes(Petal.Length, Petal.Width, colour = Species)) + 
   geom_point() +
@@ -43,7 +42,7 @@ density_plot <- ggplot(iris, aes(Petal.Length, fill = Species)) +
 ```
 
 ```{r}
-scatter_plot_facets
+scatter_plot
 scatter_plot_many_lines
 density_plot
 ```
@@ -52,7 +51,7 @@ Now, let us load `ggKNMF` and see those plots restyled
 
 ```{r}
 library(ggKNMF)
-scatter_plot_facets
+scatter_plot
 scatter_plot_many_lines
 density_plot
 ```
@@ -80,11 +79,10 @@ ggplot(iris, aes(Petal.Length, Petal.Width)) +
 ```
 
 ## Colour scheme
-Package `ggKNMF` comes with eight-colour palette which is used to construct colour scales. Their RGB definitions can be seen by prompting `knmf_colours`. Visualization is also available through:
+Package `ggKNMF` comes with eight-colour palette which is used to construct colour scales. Their RGB definitions can be seen by prompting `knmf_colours`. That si how they look like:
 
 ```{r}
-#chnage it
-knmf_colours
+Polychrome::swatch(ggKNMF::knmf_colours)
 ```
 
 When an discrete-valued aesthetic is mapped onto colour or fill, colours from this palette will be displayed. When continuous (or ordered factor) aesthetic is mappend onto colour and fill one of two oredered, multicolour scales is used: "red" varying from black through red to yellow or "blue" varying from dark grey, through light blue to light yellow:

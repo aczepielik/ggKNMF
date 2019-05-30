@@ -3,3 +3,7 @@
 
   use_knmf_colours()
 }
+
+.onUnload <- function(libname, pkgname){
+  reset_knmf_colours()
+}

@@ -13,6 +13,13 @@ knmf_geom_updates <- function(){
   update_geom_defaults("density", list(alpha = 0.85))
 }
 
+#' KNMF colours
+#'
+#' Apply colour scheme to scales and deafult some deafult colour values
+#'
+#' @param scales logical. If TRUE (default) \code{colour} and \code{fill} scales use KNMF colours
+#' @param geom_defaults logical. If TRUE (default) some standard colour settings are overwritten for KNMF colours
+#' (e.g. outliers in boxplots are red. See Details.)
 #' @export
 #'
 use_knmf_colours <- function(scales = TRUE, geom_defaults = TRUE){
@@ -33,14 +40,22 @@ use_knmf_colours <- function(scales = TRUE, geom_defaults = TRUE){
   }
 }
 
+#' @rdname use_knmf_colours
 #' @export
 
 reset_knmf_colours <- function(scales = TRUE, geom_defaults = TRUE){
   if (scales) {
-  detach("ggKNMF_colour_scales")
+    if ("ggKNMF_colour_scales" %in% search()) {
+      detach("ggKNMF_colour_scales")
+    }
   }
 
   if (geom_defaults) {
-    #to be added
+      update_geom_defaults("point", list(size = 1.5))
+      update_geom_defaults("smooth", list(colour = "#3366FF", size = 1))
+      update_geom_defaults("bar", list(fill = "grey35"))
+      update_geom_defaults("col", list(fill = "grey35"))
+      update_geom_defaults("boxplot", list(outlier.color = "grey20"))
+      update_geom_defaults("density", list(alpha = NA))
   }
 }

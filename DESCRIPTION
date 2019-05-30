@@ -1,7 +1,7 @@
 Package: ggKNMF
 Type: Package
 Title: GGplot Extnension for KNMF
-Version: 0.0.0.9000
+Version: 0.1.0
 Author: Adam Czepielik <adam.czepielik@gmail.com>
 Maintainer: Adam Czepielik <adam.czepielik@gmail.com>
 Description: This package provides some tools that members of Financial
@@ -14,5 +14,6 @@ Depends: R (>= 3.1.0), ggplot2(>= 2.2.0)
 RoxygenNote: 6.1.1
 Suggests: 
     knitr,
-    rmarkdown
+    rmarkdown, 
+    Polychrome
 VignetteBuilder: knitr

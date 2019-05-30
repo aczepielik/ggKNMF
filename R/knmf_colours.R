@@ -13,13 +13,13 @@
 #' Some modifications were made then to obtain better look for color-blind viewers. First six colours
 #' of this palette should be at least moderatly distinguishible for them.
 #'
-#' This and other palettes can be previewed with \code{\link{colour_preview}} function.
+#' This and other palettes can be previewed in the vignette.
 #'
 #' @format Named vector with eight elements
 #'
 #' @source Harmonic colours were obtained with help of \url{http://paletton.com}
 #'
-#' @seealso \code{\link{colour_preview}}, \code{\link{scale_colour_discrete_knmf}}
+#' @seealso \code{\link{scale_colour_discrete_knmf}}
 "knmf_colours"
 
 #' @rdname knmf_colours
