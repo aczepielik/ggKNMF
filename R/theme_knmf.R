@@ -26,7 +26,7 @@ theme_knmf <- function(base_size = 11, base_family = "sans",
   theme_grey(base_size = base_size, base_family = base_family,
              base_line_size = base_line_size, base_rect_size = base_rect_size) %+replace%
     theme(plot.title = element_text(size = rel(1.7), face = "bold",
-                                    hjust = 0, margin = margin(b = 3)),
+                                    hjust = 0, margin = margin(b = 6)),
           plot.subtitle = element_text(size = rel(1),
                                        hjust = 0, margin = margin(b = 6)),
           panel.background = element_rect(fill = "white", colour = NA),
